@@ -2,6 +2,12 @@ package
 {
 	import flash.display.Sprite;
 	import flash.events.Event;
+	import flash.text.*;
+	
+
+	import vk.APIConnection;
+	import vk.events.*;
+	import vk.ui.VKButton;
 	
 	/**
 	 * ...
