@@ -52,13 +52,24 @@ package
 		private function PrintMyInformation(event:Event): void
 		{
 			var my_image_loader:Loader = new Loader();
-			
-			my_image_loader.x = 65;
-			my_image_loader.y = 50;
-			
+			my_image_loader.x = 20;
+			my_image_loader.y = 25;
 			my_image_loader.load(new URLRequest(MyInformation[0]['photo_100']));
-			
 			addChild(my_image_loader);
+			
+			var text_format:TextFormat = new TextFormat(); 
+			text_format.font = 'Calibri Light';
+			text_format.size = 50;
+			text_format.bold = true;
+			
+			var my_name_text:TextField = new TextField();
+			my_name_text.x = my_image_loader.x + 100 + 15;
+			my_name_text.y = my_image_loader.y + 100 / 2 - 50 / 2 - 10;
+			my_name_text.text = MyInformation[0]['first_name'] + " " + MyInformation[0]['last_name'];
+			my_name_text.autoSize = TextFieldAutoSize.LEFT;
+			my_name_text.height = 400;
+			my_name_text.setTextFormat(text_format);
+			addChild(my_name_text);
 		}
 		
 		private function GetInformation(id:int):void
